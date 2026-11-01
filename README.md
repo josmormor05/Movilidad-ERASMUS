@@ -5,3 +5,4 @@ Parte A
 Paguina sencilla nada mas modificado la caecera y el pie para movilidad en erasmus 
 Parte B
 Pagina mas eleborada jutandola con la primera para la inscripcion del alumnado al erasmus +
+Realizado por José Manuel Morante Morales 2ºDAW
