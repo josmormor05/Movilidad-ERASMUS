@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f4f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecera {
+  background-color: #163654;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.cabecera__marca {
+  font-size: 20px;
+  font-weight: bold;
+}
+.menu__lista {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu__enlace {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.menu__enlace:hover {
+  text-decoration: underline;
+}
+
+[aria-current="page"] {
+  font-weight: bold;
+  border-bottom: 3px solid #f3a83b;
+  text-decoration: none;
+}
+
+.principal {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.principal h1 {
+  color: #163654;
+  font-size: 26px;
+}
+
+.pie {
+  background-color: #163654;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-size: 13px;
+}
+
+.pie__texto {
+  color: white;
+}
+
+.pie__lista {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.pie__enlace {
+  color: white;
+  text-decoration: underline;
+}
