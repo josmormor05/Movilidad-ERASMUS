@@ -1,68 +1,64 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: #f4f6f9;
   color: #1b1b1b;
+  background-color: #f4f6f9;
 }
 
 .salto {
   position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  top: -999rem;
+  left: -999rem;
 }
 
 .salto:focus {
-  position: static;
-  width: auto;
-  height: auto;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 10;
   padding: 0.5rem 1rem;
   background-color: #ffd166;
   color: #12355b;
   font-weight: bold;
   text-decoration: none;
+  border-radius: 0.25rem;
 }
 
 .cabecera {
-  background-color: #12355b;
-  color: #ffffff;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  background-color: #12355b;
+  color: #ffffff;
   padding: 1rem 1.5rem;
-  gap: 1rem;
 }
 
 .cabecera__marca {
-  margin: 0;
   font-size: 1.25rem;
   font-weight: bold;
+  margin: 0;
 }
 
 .menu__lista {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
 .menu__enlace {
   color: #ffffff;
   text-decoration: none;
-  padding: 0.25rem 0;
+  padding-bottom: 0.25rem;
 }
 
 .menu__enlace:hover {
@@ -71,15 +67,11 @@ body {
 
 .menu__enlace[aria-current="page"] {
   font-weight: bold;
-  text-decoration: underline;
-  text-decoration-color: #ffd166;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 0.35rem;
+  border-bottom: 2px solid #ffd166;
 }
 
 .menu__enlace:focus {
   outline: 2px solid #ffd166;
-  outline-offset: 2px;
 }
 
 .principal {
@@ -90,7 +82,7 @@ body {
 
 .principal h1 {
   color: #12355b;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -98,74 +90,30 @@ body {
 .principal > p {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  color: #1b1b1b;
 }
 
 .contenido {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-.ayuda {
-  background-color: #ffffff;
-  border: 1px solid #b7c0cc;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.ayuda__titulo {
-  color: #12355b;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 1.25rem;
-}
-
-.ayuda__lista {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 1.25rem;
-}
-
-.ayuda__paso {
-  display: grid;
-  grid-template-columns: 2rem 1fr;
-  gap: 0.75rem;
-  align-items: start;
-}
-
-.ayuda__numero {
-  background-color: #12355b;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 0.9rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-}
-
-.ayuda__texto {
-  margin: 0;
-  line-height: 1.4;
+.formulario {
+  width: 100%;
 }
 
 .grupo {
   background-color: #ffffff;
   border: 1px solid #b7c0cc;
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   margin: 0 0 1.5rem 0;
 }
 
 .grupo__titulo {
   color: #12355b;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   padding: 0 0.5rem;
 }
 
@@ -177,8 +125,9 @@ body {
 
 .campo {
   display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
   gap: 0.25rem;
-  min-width: 0;
 }
 
 .campo__etiqueta {
@@ -187,7 +136,6 @@ body {
 
 .campo__control {
   width: 100%;
-  min-width: 0;
   max-width: 100%;
   min-height: 44px;
   font-family: inherit;
@@ -195,59 +143,53 @@ body {
   color: #1b1b1b;
   background-color: #ffffff;
   border: 2px solid #5b6b7f;
-  border-radius: 0.375rem;
+  border-radius: 0.35rem;
   padding: 0.5rem 0.75rem;
 }
 
 textarea.campo__control {
-  width: 100%;
-  min-width: 0;
-}
-
-textarea.campo__control {
-  resize: vertical;
   min-height: 8rem;
-}
-
-.campo__ayuda {
-  margin: 0;
-  font-size: 0.875rem;
-  color: #4a5568;
-}
-
-.campo__pie {
-  display: grid;
-  gap: 0.25rem;
 }
 
 .campo__control:focus {
   outline: 2px solid #0a5bd3;
-  outline-offset: 1px;
   border-color: #0a5bd3;
 }
 
-.campo__control:user-invalid {
+.campo__control:focus:invalid {
   border-color: #b3261e;
+}
+
+.campo__ayuda {
+  font-size: 0.875em;
+  color: #4a5568;
+  margin: 0;
 }
 
 .telefono {
   display: grid;
   grid-template-columns: minmax(6rem, 9.5rem) 1fr;
   gap: 0.5rem;
-  align-items: center;
+  width: 100%;
+}
+
+.telefono__prefijo,
+.telefono__numero {
+  width: 100%;
 }
 
 .opciones {
-  border: none;
-  padding: 0;
+  border: 0;
   margin: 0;
-  min-width: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
 }
 
 .opciones__pregunta {
   font-weight: bold;
-  padding: 0;
   margin-bottom: 0.25rem;
+  padding: 0;
 }
 
 .opciones__lista {
@@ -269,41 +211,80 @@ textarea.campo__control {
   width: 1.5rem;
   height: 1.5rem;
   margin: 0;
-  accent-color: #12355b;
-  cursor: pointer;
-}
-
-.opcion__marca:focus {
-  outline: 2px solid #0a5bd3;
-  outline-offset: 2px;
-}
-
-.opcion label {
-  cursor: pointer;
 }
 
 .opcion--larga {
   align-items: start;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .opcion--larga .opcion__marca {
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
 }
 
 .opcion--larga a {
   color: #12355b;
 }
 
-.opcion--larga a:focus {
-  outline: 2px solid #0a5bd3;
-  outline-offset: 2px;
+.ayuda {
+  background-color: #ffffff;
+  border: 1px solid #b7c0cc;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.ayuda__titulo {
+  color: #12355b;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ayuda__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ayuda__paso {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.ayuda__numero {
+  width: 2rem;
+  height: 2rem;
+  background-color: #12355b;
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.ayuda__texto {
+  margin: 0;
+}
+
+.campo__pie {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
 }
 
 .botonera {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .boton {
@@ -312,15 +293,12 @@ textarea.campo__control {
   font-family: inherit;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 0.375rem;
-  padding: 0.65rem 1.25rem;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  border-radius: 0.35rem;
+  padding: 0.6rem 1.25rem;
 }
 
 .boton:focus {
   outline: 2px solid #0a5bd3;
-  outline-offset: 2px;
 }
 
 .boton--principal {
@@ -329,40 +307,28 @@ textarea.campo__control {
   border: 2px solid #12355b;
 }
 
-.boton--principal:hover {
-  background-color: #0d2744;
-}
-
 .boton--secundario {
   background-color: #ffffff;
   color: #12355b;
   border: 2px solid #12355b;
 }
 
-.boton--secundario:hover {
-  background-color: #f4f6f9;
-}
-
 .boton--borrar {
   background-color: #ffffff;
   color: #1b1b1b;
-  border: 2px solid #5b6b7f;
-}
-
-.boton--borrar:hover {
-  background-color: #f4f6f9;
+  border: 2px solid #b7c0cc;
 }
 
 .pie {
-  background-color: #12355b;
-  color: #ffffff;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
-  margin-top: 2rem;
+  flex-wrap: wrap;
   gap: 1rem;
+  background-color: #12355b;
+  color: #ffffff;
+  padding: 1.25rem 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .pie__texto {
@@ -371,12 +337,12 @@ textarea.campo__control {
 }
 
 .pie__lista {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .pie__enlace {
@@ -391,63 +357,58 @@ textarea.campo__control {
 
 .pie__enlace:focus {
   outline: 2px solid #ffd166;
-  outline-offset: 2px;
 }
 
 @media (min-width: 40em) {
-
-  .grupo--personales .grupo__campos {
+  .grupo--personales .grupo__campos,
+  .grupo--academicos .grupo__campos,
+  .grupo--destino .grupo__campos,
+  .grupo--motivacion .grupo__campos {
     grid-template-columns: repeat(6, 1fr);
-    gap: 1rem 1.5rem;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
   }
 
   .campo--nombre {
-    grid-column: span 2;
+    grid-column: 1 / 3;
   }
 
   .campo--apellidos {
-    grid-column: span 4;
+    grid-column: 3 / 7;
   }
 
   .campo--correo {
-    grid-column: span 3;
+    grid-column: 1 / 4;
   }
 
   .campo--telefono {
-    grid-column: span 3;
+    grid-column: 4 / 7;
   }
 
   .campo--nacimiento {
-    grid-column: span 2;
-  }
-
-  .grupo--academicos .grupo__campos {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem 1.5rem;
+    grid-column: 1 / 3;
   }
 
   .campo--ciclo {
-    grid-column: span 3;
+    grid-column: 1 / 4;
   }
 
   .campo--curso {
-    grid-column: span 3;
+    grid-column: 4 / 7;
   }
 
   .campo--nota {
-    grid-column: span 2;
+    grid-column: 1 / 3;
   }
 
   .campo--idiomas {
-    grid-column: span 4;
+    grid-column: 3 / 7;
   }
 
   .grupo--destino .grupo__campos {
-    grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
-      "pais pais pais incorp incorp incorp"
+      "pais pais pais incorporacion incorporacion incorporacion"
       "duracion duracion duracion duracion duracion duracion";
-    gap: 1rem 1.5rem;
   }
 
   .campo--pais {
@@ -455,7 +416,7 @@ textarea.campo__control {
   }
 
   .campo--incorporacion {
-    grid-area: incorp;
+    grid-area: incorporacion;
   }
 
   .campo--duracion {
@@ -463,11 +424,9 @@ textarea.campo__control {
   }
 
   .grupo--motivacion .grupo__campos {
-    grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
       "carta carta carta carta carta carta"
       "curriculum curriculum curriculum curriculum curriculum curriculum";
-    gap: 1rem 1.5rem;
   }
 
   .campo--carta {
@@ -483,23 +442,25 @@ textarea.campo__control {
     align-items: center;
   }
 
-  #carta-limite {
-    text-align: right;
-  }
-
   .botonera {
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
   }
 
-  .boton--borrar {
-    justify-self: start;
+  .boton {
     width: auto;
   }
 
-  .boton--secundario,
+  .boton--borrar {
+    grid-column: 1;
+  }
+
+  .boton--secundario {
+    grid-column: 3;
+  }
+
   .boton--principal {
-    width: auto;
+    grid-column: 4;
   }
 }
 
