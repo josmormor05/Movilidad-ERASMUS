@@ -1,6 +1,24 @@
 * {
   box-sizing: border-box;
 }
+:root{
+  --colorprincipal:#12355b;
+  --textoscuro:#1b1b1b;
+  --fondo:#f4f6f9;
+  --blanco:#ffffff;
+  --focoactivo:#ffd166;
+  --bordes:#b7c0cc;
+  --bordesII:#5b6b7f;
+  --focoscampos:#0a5bd3;
+  --error:#b3261e;
+  --textosayuda:#4a5568;
+  --azuldegradado:#1f5088;
+  --pasoraton:#e3ebf5;
+  --botonprincipalpasoraton:#e3ebf5;
+  --botonprincipal:#0b2340;
+  --sombrabloquesboton:rgba(18, 53, 91, 0.2);
+  --sombratexto:rgba(0, 0, 0, 0.45);
+}
 
 body {
   margin: 0;
@@ -8,8 +26,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: #1b1b1b;
-  background-color: #f4f6f9;
+  color: var(--textoscuro);
+  background-color: var(--fondo);
 }
 
 .salto {
@@ -23,8 +41,8 @@ body {
   left: 0.5rem;
   z-index: 10;
   padding: 0.5rem 1rem;
-  background-color: #ffd166;
-  color: #12355b;
+  background-color: var(--focoactivo);
+  color: var(--colorprincipal);
   font-weight: bold;
   text-decoration: none;
   border-radius: 0.25rem;
@@ -35,8 +53,9 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #12355b;
-  color: #ffffff;
+  background-color: var(--colorprincipal);
+  background: linear-gradient(to right, var(--colorprincipal), var(--azuldegradado));
+  color: var(--blanco);
   padding: 1rem 1.5rem;
 }
 
@@ -44,6 +63,7 @@ body {
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0;
+  text-shadow: 0 0.0625rem 0.125rem var(--sombratexto);
 }
 
 .menu__lista {
@@ -56,7 +76,7 @@ body {
 }
 
 .menu__enlace {
-  color: #ffffff;
+  color: var(--blanco);
   text-decoration: none;
   padding-bottom: 0.25rem;
 }
@@ -67,11 +87,11 @@ body {
 
 .menu__enlace[aria-current="page"] {
   font-weight: bold;
-  border-bottom: 2px solid #ffd166;
+  border-bottom: 2px solid var(--focoactivo);
 }
 
 .menu__enlace:focus {
-  outline: 2px solid #ffd166;
+  outline: 2px solid var(--focoactivo);
 }
 
 .principal {
@@ -81,7 +101,7 @@ body {
 }
 
 .principal h1 {
-  color: #12355b;
+  color: var(--colorprincipal);
   font-size: 1.6rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -103,15 +123,16 @@ body {
 }
 
 .grupo {
-  background-color: #ffffff;
-  border: 1px solid #b7c0cc;
+  background-color: var(--blanco);
+  border: 1px solid var(--bordes);
   border-radius: 0.5rem;
   padding: 1.25rem;
   margin: 0 0 1.5rem 0;
+  box-shadow: 0 0.125rem 0.5rem var(--sombrabloquesboton);
 }
 
 .grupo__titulo {
-  color: #12355b;
+  color: var(--colorprincipal);
   font-weight: bold;
   font-size: 1.2em;
   padding: 0 0.5rem;
@@ -140,9 +161,9 @@ body {
   min-height: 44px;
   font-family: inherit;
   font-size: 1rem;
-  color: #1b1b1b;
-  background-color: #ffffff;
-  border: 2px solid #5b6b7f;
+  color: var(--textoscuro);
+  background-color: var(--blanco);
+  border: 2px solid var(--bordesII);
   border-radius: 0.35rem;
   padding: 0.5rem 0.75rem;
 }
@@ -152,17 +173,17 @@ textarea.campo__control {
 }
 
 .campo__control:focus {
-  outline: 2px solid #0a5bd3;
-  border-color: #0a5bd3;
+  outline: 2px solid var(--focoscampos);
+  border-color: var(--focoscampos);
 }
 
 .campo__control:focus:invalid {
-  border-color: #b3261e;
+  border-color: var(--error);
 }
 
 .campo__ayuda {
   font-size: 0.875em;
-  color: #4a5568;
+  color: var(--textosayuda);
   margin: 0;
 }
 
@@ -223,21 +244,22 @@ textarea.campo__control {
 }
 
 .opcion--larga a {
-  color: #12355b;
+  color: var(--colorprincipal);
 }
 
 .ayuda {
-  background-color: #ffffff;
-  border: 1px solid #b7c0cc;
+  background-color: var(--blanco);
+  border: 1px solid var(--bordes);
   border-radius: 0.5rem;
   padding: 1.5rem;
   display: grid;
   gap: 1.25rem;
   align-content: start;
+  box-shadow: 0 0.125rem 0.5rem var(--sombrabloquesboton);
 }
 
 .ayuda__titulo {
-  color: #12355b;
+  color: var(--colorprincipal);
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
@@ -261,13 +283,18 @@ textarea.campo__control {
 .ayuda__numero {
   width: 2rem;
   height: 2rem;
-  background-color: #12355b;
-  color: #ffffff;
+  background-color: var(--colorprincipal);
+  color: var(--blanco);
   border-radius: 50%;
   text-align: center;
   line-height: 2rem;
   font-weight: bold;
   font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.ayuda__paso:hover .ayuda__numero {
+  transform: scale(1.1);
 }
 
 .ayuda__texto {
@@ -295,28 +322,48 @@ textarea.campo__control {
   font-weight: bold;
   border-radius: 0.35rem;
   padding: 0.6rem 1.25rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .boton:focus {
-  outline: 2px solid #0a5bd3;
+  outline: 2px solid var(--focoscampos);
 }
 
 .boton--principal {
-  background-color: #12355b;
-  color: #ffffff;
-  border: 2px solid #12355b;
+  background-color: var(--colorprincipal);
+  color: var(--blanco);
+  border: 2px solid var(--colorprincipal);
+  box-shadow: 0 0.125rem 0.25rem var(--sombrabloquesboton);
+}
+
+.boton--principal:active {
+  box-shadow: 0 0.05rem 0.1rem var(--sombrabloquesboton);
+}
+
+.boton--principal:hover,
+.boton--principal:focus-visible {
+  background-color: var(--botonprincipal);
+  transform: translate(0, -2px);
 }
 
 .boton--secundario {
-  background-color: #ffffff;
-  color: #12355b;
-  border: 2px solid #12355b;
+  background-color: var(--blanco);
+  color: var(--colorprincipal);
+  border: 2px solid var(--colorprincipal);
 }
 
 .boton--borrar {
-  background-color: #ffffff;
-  color: #1b1b1b;
-  border: 2px solid #b7c0cc;
+  background-color: var(--blanco);
+  color: var(--textoscuro);
+  border: 2px solid var(--bordes);
+}
+
+.boton--secundario:hover,
+.boton--secundario:focus-visible,
+.boton--borrar:hover,
+.boton--borrar:focus-visible {
+  background-color: var(--pasoraton);
+  transform: translate(0, -2px);
 }
 
 .pie {
@@ -325,8 +372,9 @@ textarea.campo__control {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  background-color: #12355b;
-  color: #ffffff;
+  background-color: var(--colorprincipal);
+  background: linear-gradient(to right, var(--colorprincipal), var(--azuldegradado));
+  color: var(--blanco);
   padding: 1.25rem 1.5rem;
   margin-top: 2.5rem;
 }
@@ -346,7 +394,7 @@ textarea.campo__control {
 }
 
 .pie__enlace {
-  color: #ffffff;
+  color: var(--blanco);
   text-decoration: none;
   font-size: 0.875rem;
 }
@@ -356,7 +404,7 @@ textarea.campo__control {
 }
 
 .pie__enlace:focus {
-  outline: 2px solid #ffd166;
+  outline: 2px solid var(--focoactivo);
 }
 
 @media (min-width: 40em) {
